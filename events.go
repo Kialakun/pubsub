@@ -13,5 +13,5 @@ type EventChannels []EventChannel
 
 type EventBus struct {
 	subscribers map[string]EventChannels // map of Topic to EventChannels
-	mutx        sync.Mutex               // Mutex to protect race conditions
+	mutx        sync.Mutex               // Mutex to safely read/write
 }
